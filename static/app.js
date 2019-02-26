@@ -18,7 +18,7 @@ const submitProfile = async () => {
   const response_of_imgur = await fetch("https://api.imgur.com/3/image", settings);
   imgur_json = await response_of_imgur.json();
   form_object.imagen = imgur_json.data.link;
-  const response = await fetch('http://5fa97c7d.ngrok.io/profiles', {
+  const response = await fetch('http://393a2bcb.ngrok.io/profiles', {
     method: 'POST',
     body: JSON.stringify(form_object),
     headers:{
