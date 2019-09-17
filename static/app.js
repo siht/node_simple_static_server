@@ -1,5 +1,6 @@
 const formToObject = elements => [].reduce.call(elements, (data, element) => {
-  data[element.name] = element.value;
+  if (element.value)
+    data[element.name] = element.value;
   return data;
 }, {});
 
@@ -15,10 +16,10 @@ const submitProfile = async () => {
     },
     body: form
   };
-  const response_of_imgur = await fetch("https://api.imgur.com/3/image", settings);
-  imgur_json = await response_of_imgur.json();
-  form_object.imagen = imgur_json.data.link;
-  const response = await fetch('http://393a2bcb.ngrok.io/profiles', {
+  // const response_of_imgur = await fetch("https://api.imgur.com/3/image", settings);
+  // imgur_json = await response_of_imgur.json();
+  // form_object.imagen = imgur_json.data.link;
+  const response = await fetch('http://localhost:3000/profile/new/', {
     method: 'POST',
     body: JSON.stringify(form_object),
     headers:{
