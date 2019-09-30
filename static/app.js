@@ -12,14 +12,14 @@ const submitProfile = async () => {
   let settings = {
     method: "POST",
     headers: {
-      "Authorization": "Client-ID 341ced5503c09cb"
+      "Authorization": IMGUR_CLIENT_ID
     },
     body: form
   };
-  // const response_of_imgur = await fetch("https://api.imgur.com/3/image", settings);
-  // imgur_json = await response_of_imgur.json();
-  // form_object.imagen = imgur_json.data.link;
-  const response = await fetch('http://localhost:3000/profile/new/', {
+  const response_of_imgur = await fetch(IMGUR_URL, settings);
+  imgur_json = await response_of_imgur.json();
+  form_object.imagen = imgur_json.data.link;
+  const response = await fetch('http://' + API_URL + '/profile/new/', {
     method: 'POST',
     body: JSON.stringify(form_object),
     headers:{

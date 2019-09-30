@@ -27,7 +27,7 @@ node server.js
 
 ### docker users
 
-donwload this [repo](https://github.com/siht/node_simple_static_server) and inside of folder named src, after run in terminal
+donwload this [repo](https://github.com/siht/node_simple_static_server) inside src folder, after run in terminal
 
 ```bash
 docker-compose up
