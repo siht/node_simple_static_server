@@ -9,7 +9,10 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.route('/').get(function (req, res) {
-  res.render('index', {'API_URL': api_url});
+  res.render('show', {'API_URL': api_url});
+})
+app.route('/insert').get(function (req, res) {
+  res.render('insert', {'API_URL': api_url});
 })
 
 app.use('/static', express.static(static_path));
