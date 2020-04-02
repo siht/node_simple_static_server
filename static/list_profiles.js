@@ -8,7 +8,7 @@ const listProfiles = async () => {
         activeList = !index ? `class="active"` : "";
         activeImage = !index ? `class="item active"` : `class="item"`;
         const templateIndex = `<li ${activeList} data-target="#myCarousel" data-slide-to="${index}"></li>`;
-        const templateImages = `<div ${activeImage}><img src="${element.imagen}" alt="${element.imagen}"></div>`;
+        const templateImages = `<div ${activeImage}><img src="${element.imagen}" alt="${element.titulo}"></div>`;
         htmlIndex += templateIndex;
         htmlImages += templateImages;
     });
