@@ -6,43 +6,52 @@ gives html and static content
 
 node: 10.16.3
 
+### optional dependencies
+
+this project needs an api to gives the real functionality so in order to run this project you also need one of these projects (suggest use the latest versions)
+
+- [php-profile-rest-api](https://github.com/siht/php-profile-rest-api)
+- [node_api_test](https://github.com/siht/node_api_test)
+
+if you don't want to do an exhaustive configuration I suggest use the docker projects below:
+
+- [docker_php_rest_with_front](https://github.com/siht/docker_php_rest_with_front)
+- [basic_node_docker](https://github.com/siht/basic_node_docker)
+- or do your own api
+
 ## how to install
 
-if you are docker user skip this part
 only need to run for install modules
 
 ```bash
-npm i
+npm i # for development mode
+# or
+npm i --only=prod # for production mode
 ```
 
 ## how to run
 
-### non docker users
+set environment variable called "FRONT_PORT" with a integer and "API_URL" with the direction of the api. By default if you don't set these variables this app tries to get api data from <http://localhost:3000> and the FRONT_PORT is 8000
 
-first run a mongodb in localhost in default port, after run in terminal
+### run in production mode
 
 ```bash
 node server.js
+# or
+npm start
+# or
+npm run start
 ```
 
-### docker users
-
-donwload this [repo](https://github.com/siht/node_simple_static_server) inside src folder, after run in terminal
+### run in development mode
 
 ```bash
-docker-compose up
+npm run dev
 ```
 
-#### docker develop mode
+## what does
 
-first install dependencies locally
+this project has two routes
 
-```bash
-docker run --rm -ti -v "$PWD:/app" -w "/app" --user "$(id -u):$(id -g)" node:10.16.3-alpine npm i
-```
-
-after up the server in development mode
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
-```
+- / (to see a carousel of images)
+- /insert (to insert new images)
