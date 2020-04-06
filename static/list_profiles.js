@@ -1,6 +1,6 @@
 
 const listProfiles = async () => {
-    const response = await fetch('http://' + API_URL + '/profiles');
+    const response = await fetch(API_URL + '/profiles');
     const json_response = await response.json();
     let htmlIndex = "";
     let htmlImages = "";
