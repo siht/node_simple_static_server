@@ -1,6 +1,6 @@
 # static server
 
-gives html and static content
+gives html and static content [take a look](https://fathomless-dawn-74925.herokuapp.com/). May the api don't work because this is a hobist project in heroku maybe needs a refresh in some configurations, ask for me to refresh conf and you can see the results.
 
 ## dependencies
 
