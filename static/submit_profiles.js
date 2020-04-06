@@ -22,7 +22,7 @@ function showMessageModal(message){
 
 const submitProfile = async () => {
   let form_object = formToObject($("#submitForm").serializeArray()); // TODO: quit jquery
-  const response = await fetch('http://' + API_URL + '/profile/new/', {
+  const response = await fetch(API_URL + '/profile/new/', {
     method: 'POST',
     body: JSON.stringify(form_object),
     headers:{
@@ -39,7 +39,7 @@ const submitProfile = async () => {
       body: form
     };
     const responseImage = await fetch(
-      'http://' + API_URL + '/profile/' + newProfile._id + '/upload-image',
+      API_URL + '/profile/' + newProfile._id + '/upload-image',
       dataSettingsToUploadApi
     );
   }catch(error){
